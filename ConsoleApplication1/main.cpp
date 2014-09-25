@@ -26,11 +26,23 @@ void InitWindow(int width, int height, bool fullscreen){
 
 }
 
+//Used to cleanup once we exit
 void CleanUp(){
-	//Stuff, again
+	SDL_DestroyWindow(window);
+	SDL_Quit();
 }
 
 //Main Method - Entry Point
 int main(int argc, char*arg[]){
+	//init everything - SDL, if it is nonzero we have a problem
+	if (SDL_Init(SDL_INIT_EVERYTHING) != 0){
+		std::cout << "ERROR SDL_Init" << SDL_GetError() << std::endl;
+		return -1;
+	}
+
+	InitWindow(WINDOW_WIDTH, WINDOW_HEIGHT, false);
+
+	CleanUp();
+
 	return 0;
 }
