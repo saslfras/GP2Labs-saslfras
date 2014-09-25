@@ -6,6 +6,8 @@
 *.user
 *.userosscache
 *.sln.docstates
+.sdf
+.v12.suo
 
 # Build results
 [Dd]ebug/
