@@ -10,7 +10,7 @@ void InitWindow(int width, int height, bool fullscreen){
 }
 
 void CleanUp(){
-	//Stuff
+	//Stuff, again
 }
 
 //Main Method - Entry Point
