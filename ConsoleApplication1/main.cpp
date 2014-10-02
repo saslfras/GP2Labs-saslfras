@@ -78,7 +78,7 @@ void setViewport(int width, int height){
 	GLfloat ratio;
 	
 	//make sure height is always above 0
-	if(heigt == 0){
+	if(height == 0){
 		height = 1;
 	}
 	
@@ -89,7 +89,7 @@ void setViewport(int width, int height){
 	glViewport(0,0,(GLsizei)width, (GLsizei)height);
 	
 	//Change to project matrix mode
-	glMatrixMode(GL_PROJECTIONC);
+	glMatrixMode(GL_PROJECTION);
 	glLoadIdentity();
 	
 	//Calculate perspetive matrix, using glu library functions
@@ -122,7 +122,7 @@ void render(){
 		glColor3f(1.0f,0.0f,0.0f);//Color of the vertice
 		glVertex3f(0.0f,1.0f,0.0f);//Top
 		glVertex3f(-1.0f,-1.0f,0.0f);//Bottom Left
-		glVertex3f(1.0f,-1.0f,0.0f);//BottomRight
+		glVertex3f(0.0f,-1.0f,0.0f);//BottomRight
 	glEnd();
 	
 	//require to swap the back and front buffer
@@ -130,7 +130,7 @@ void render(){
 }
 
 //Function to update game state
-voide update(){
+void update(){
 	
 }
 
