@@ -12,8 +12,14 @@
 SDL_Window*window;
 //SDL GL Context
 SDL_GLContext glcontext = NULL;
+//Vertex data of triangle
+float triangleData[] = { 0.0f, 1.0f, 0.0f,	//Top
+						- 1.0f, -1.0f, 0.0f,//BottomLeft
+						1.0f, -1.0f, 0.0f };//Bottom Right
+//Triangle VBO variable
+GLuint triangleVBO;
 
-//Constants to control window cration
+//Constants to control window creation
 const int WINDOW_WIDTH = 640;
 const int WINDOW_HEIGHT = 480;
 bool running = true;
@@ -35,6 +41,7 @@ void InitWindow(int width, int height, bool fullscreen){
 
 //Used to cleanup once we exit
 void CleanUp(){
+	glDeleteBuffers(1, &triangleVBO);
 	SDL_GL_DeleteContext(glcontext);
 	SDL_DestroyWindow(window);
 	SDL_Quit();
@@ -139,6 +146,17 @@ void update(){
 	
 }
 
+//Will create and fill a VBO with some vertex data
+void initGeomoetry(){
+	//Create buffer, specifies number of buffers to generate
+	glGenBuffers(1, &triangleVBO);
+	//make the new VBO, binds the buffer to a specified state
+	glBindBuffer(GL_ARRAY_BUFFER, triangleVBO);
+	//Copy vertex data to VBO
+	glBufferData(GL_ARRAY_BUFFER, sizeof(triangleData), triangleData, GL_STATIC_DRAW);
+
+}
+
 //Main Method - Entry Point
 int main(int argc, char*arg[]){
 	//init everything - SDL, if it is nonzero we have a problem
@@ -151,6 +169,8 @@ int main(int argc, char*arg[]){
 	
 	//Call our InitOpenGL Function
 	initOpenGL();
+	//Call to initGeometry
+	initGeomoetry();
 	//Set our viewport
 	setViewport(WINDOW_WIDTH,WINDOW_HEIGHT);
 
