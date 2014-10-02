@@ -1,6 +1,7 @@
 //Header Files
 #include <iostream>
 //header for SDL2 functionality
+#include <GL/glew.h>
 #include <SDL.h>
 #include <SDL_opengl.h>
 #include <gl\GLU.h>
@@ -68,7 +69,11 @@ void initOpenGL(){
 	//Turn on best perspective correction
 	glHint(GL_PERSPECTIVE_CORRECTION_HINT, GL_NICEST);
 	
-	
+	GLenum err = glewInit();
+	if (GLEW_OK != err){
+		/*Problem: glewInit failed, something is seriously wrong.*/
+		std::cout << "Error: " << glewGetErrorString(err) << std::endl;
+	}
 	
 }
 
@@ -122,7 +127,7 @@ void render(){
 		glColor3f(1.0f,0.0f,0.0f);//Color of the vertice
 		glVertex3f(0.0f,1.0f,0.0f);//Top
 		glVertex3f(-1.0f,-1.0f,0.0f);//Bottom Left
-		glVertex3f(0.0f,-1.0f,0.0f);//BottomRight
+		glVertex3f(1.0f,-1.0f,0.0f);//BottomRight
 	glEnd();
 	
 	//require to swap the back and front buffer
