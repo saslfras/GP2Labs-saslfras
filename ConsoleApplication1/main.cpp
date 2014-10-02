@@ -122,7 +122,24 @@ void render(){
 	
 	//clear the color and depth buffer
 	glClear(GL_COLOR_BUFFER_BIT|GL_DEPTH_BUFFER_BIT);
-	
+
+	//Make the new VBO active. Repeat here as a sanity check(may have changed since initialization)
+	glBindBuffer(GL_ARRAY_BUFFER, triangleVBO);
+	//Establish its 3 coordinates per vertex with zero stride(space between elements) in 
+	//array and contain floating point numbers
+	glVertexPointer(3, GL_FLOAT, 0, NULL);
+	//Establish array contains vertices(not normals, colors, texture coords etc)
+	glEnableClientState(GL_VERTEX_ARRAY);
+
+	//Switch to ModelView
+	glMatrixMode(GL_MODELVIEW);
+	//Reset using the Identity Matrix
+	glLoadIdentity();
+	//translate
+	glTranslatef(0.0f, 0.0f, -6.0f);
+	//Actually draw the triangle, giving the number of vertices provided
+	glDrawArrays(GL_TRIANGLES, 0, sizeof(triangleData) / (3 * sizeof(float)));
+
 	//Switch to ModelView
 	glMatrixMode(GL_MODELVIEW);
 	//Reset using the identitiy matrix
