@@ -140,19 +140,24 @@ void render(){
 	//Actually draw the triangle, giving the number of vertices provided
 	glDrawArrays(GL_TRIANGLES, 0, sizeof(triangleData) / (3 * sizeof(float)));
 
-	//Switch to ModelView
-	glMatrixMode(GL_MODELVIEW);
-	//Reset using the identitiy matrix
-	glLoadIdentity();
-	//Translate to -5.0f on z-axis
-	glTranslatef(0.0f,0.0f,-5.0f);
-	//Begin drawing triangles
-	glBegin(GL_TRIANGLES);
-		glColor3f(1.0f,0.0f,0.0f);//Color of the vertice
-		glVertex3f(0.0f,1.0f,0.0f);//Top
-		glVertex3f(-1.0f,-1.0f,0.0f);//Bottom Left
-		glVertex3f(1.0f,-1.0f,0.0f);//BottomRight
-	glEnd();
+	////Second triangle
+	//glLoadIdentity();
+	//glTranslatef(1.0f, 0.0f, -5.0f);
+	//glDrawArrays(GL_TRIANGLES, 0, sizeof(triangleData) / (3 * sizeof(float)));
+
+	////Switch to ModelView
+	//glMatrixMode(GL_MODELVIEW);
+	////Reset using the identitiy matrix
+	//glLoadIdentity();
+	////Translate to -5.0f on z-axis
+	//glTranslatef(0.0f,0.0f,-5.0f);
+	////Begin drawing triangles
+	//glBegin(GL_TRIANGLES);
+	//	glColor3f(1.0f,0.0f,0.0f);//Color of the vertice
+	//	glVertex3f(0.0f,1.0f,0.0f);//Top
+	//	glVertex3f(-1.0f,-1.0f,0.0f);//Bottom Left
+	//	glVertex3f(1.0f,-1.0f,0.0f);//BottomRight
+	//glEnd();
 	
 	//require to swap the back and front buffer
 	SDL_GL_SwapWindow(window);
@@ -188,6 +193,7 @@ int main(int argc, char*arg[]){
 	initOpenGL();
 	//Call to initGeometry
 	initGeomoetry();
+
 	//Set our viewport
 	setViewport(WINDOW_WIDTH,WINDOW_HEIGHT);
 
