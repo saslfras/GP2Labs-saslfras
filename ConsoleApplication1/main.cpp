@@ -12,10 +12,35 @@
 SDL_Window*window;
 //SDL GL Context
 SDL_GLContext glcontext = NULL;
-//Vertex data of triangle
+/*//Vertex data of triangle
 float triangleData[] = { 0.0f, 1.0f, 0.0f,	//Top
-						- 1.0f, -1.0f, 0.0f,//BottomLeft
-						1.0f, -1.0f, 0.0f };//Bottom Right
+			- 1.0f, -1.0f, 0.0f,	//BottomLeft
+			1.0f, -1.0f, 0.0f };	//Bottom Right
+*/
+//Vertex Data of triangles for cube
+Vertex triangleData[] = {
+	//Front
+		//Bottom Left Triangle of front
+		{-0.5f,0.5f,0.5f,
+		1.0f,0.0f,1.0f,1.0f},	//Top left
+		
+		{-0.5f,-0.5f,0.5f,
+		1.0f,1.0f,0.0f,1.0f},	//Bottom Left
+		
+		{0.5f,-0.5f,0.5f,
+		0.0f,1.0f,1.0f,1.0f},	//Bottom Right
+		
+		//Top Right Triangle of front
+		{0.5f,0.5f,0.5f,
+		1.0f,0.0f,1.0f,1.0f},	//Top Right
+		
+		{-0.5f,0.5f,0.5f,
+		1.0f,0.0f,1.0f,1.0f},	//Top Left
+		
+		{0.5f,-0.5f,0.5f,
+		0.0f,1.0f,1.0f,1.0f},	//Bottom Right
+		
+};
 //Triangle VBO variable
 GLuint triangleVBO;
 
