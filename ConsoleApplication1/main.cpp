@@ -135,6 +135,11 @@ void render(){
 	glMatrixMode(GL_MODELVIEW);
 	//Reset using the Identity Matrix
 	glLoadIdentity();
+	
+	//Set up the 3D space from the 2D space
+	//First 3 params set camera position, second 3 are center(look at point), last 3 are up axis
+	gluLookAt(0.0,0.0,0.0,0.0,0.0,-1.0f,0.0,1.0,0.0);
+	
 	//translate
 	glTranslatef(0.0f, 0.0f, -6.0f);
 	//Actually draw the triangle, giving the number of vertices provided
