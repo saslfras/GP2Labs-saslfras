@@ -52,13 +52,13 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>C:\Users\nsosa200\Documents\GitHub\GP2Labs-saslfras\ConsoleApplication1;C:\Users\nsosa200\Desktop\glew-1.11.0;C:\Users\nsosa200\Desktop\glm;C:\Specialised Applications\SDL2\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Specialised Applications\glew-1.11.0\include;C:\Specialised Applications\SDL2_ttf-2.0.12\include;C:\Specialised Applications\SDL2_image-2.0.0\include;C:\Users\nsosa200\Documents\GitHub\GP2Labs-saslfras\ConsoleApplication1;C:\Users\nsosa200\Desktop\glew-1.11.0;C:\Users\nsosa200\Desktop\glm;C:\Specialised Applications\SDL2\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>C:\Users\nsosa200\Documents\GitHub\GP2Labs-saslfras\ConsoleApplication1;C:\Users\nsosa200\Desktop\glew-1.11.0;C:\Specialised Applications\SDL2\lib\x86;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>SDL2.lib;SDL2main.lib;glew32.lib;SDL2_image.dll;SDL2_ttf.dll;opengl32.lib;glu32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>C:\Specialised Applications\glew-1.11.0\lib\Release\Win32;C:\Specialised Applications\SDL2_ttf-2.0.12\lib\x86;C:\Specialised Applications\SDL2_image-2.0.0\lib\x86;C:\Users\nsosa200\Documents\GitHub\GP2Labs-saslfras\ConsoleApplication1;C:\Users\nsosa200\Desktop\glew-1.11.0;C:\Specialised Applications\SDL2\lib\x86;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>SDL2.lib;SDL2main.lib;glew32.lib;SDL2_image.lib;SDL2_ttf.lib;opengl32.lib;glu32.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
